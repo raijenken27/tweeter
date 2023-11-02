@@ -1,0 +1,54 @@
+.new-tweet {
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #fff;
+  margin: 10px 0;
+}
+
+.new-tweet form {
+  display: flex;
+  flex-direction: column;
+}
+
+.new-tweet label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.new-tweet textarea {
+  height: 100px;
+  resize: none;
+  margin-bottom: 10px;
+}
+
+.new-tweet button {
+  background-color: #4BB543;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.new-tweet button:hover {
+  background-color: #349933;
+}
+
+.new-tweet .counter {
+  text-align: right;
+  font-size: 12px;
+  color: #999;
+}
+
+$(".new-tweet form textarea").on("input", function() {
+  // Your code to update the character count goes here
+});
+
+
+$(".new-tweet form textarea").on("input", function() {
+  const $textarea = $(this);
+  const textLength = $textarea.val().length;
+  const remainingCharacters = 140 - textLength;
+  // Update the counter, e.g., $('.counter').text(remainingCharacters);
+  // Check if the remainingCharacters are negative and apply a CSS class for red if needed
+});
+
