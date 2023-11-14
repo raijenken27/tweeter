@@ -88,6 +88,5 @@ $(document).ready(function() {
     });
   });
 
-  //load database when ready
   loadTweets();
 });
