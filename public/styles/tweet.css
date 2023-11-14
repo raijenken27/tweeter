@@ -1,111 +1,65 @@
-.tweets{
-  display: flex; 
-  flex-direction: column-reverse;
-  align-content: space-between;
-}
-
-article.tweet {
-  padding-left: 0.5em;
-  border: 5px solid grey;
-  opacity: 0.75;
-  margin: 30px;
-  padding: 13.5px;
-  min-height: 200px;
-}
-
-article.tweet:hover {
-  opacity: 1;
-  box-shadow: 10px 10px lightblue;
-}
-
-article.tweet:hover > header span.username {
-  display: inline;
-}
-
-article header {
-  padding-left: 10px;
+.tweets-container {
+  width:100%;
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  align-items: center;
 }
 
-article header:after {
-  content: "";
-  display: table;
-  clear: both;
+.tweet img {
+  max-width: 50px;
+  height: auto;
 }
 
-header img.profile-picture {
-  height: 50px;
-  width: 50px;
-}
-
-header span.name {
-  line-height: 50px;
-  margin-left: 10px;
-}
-
-header span.username {
-  color: lightgrey;
-  margin-left: auto;
-  line-height: 50px;
-  display: none;
-}
-
-div.body {
-  padding-left: 0.5em;
-}
-
-article footer {
-  padding-left: 0.5em;
-  color: grey;
-  border-top: 5px solid grey;  
+.tweet span {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
-footer p.timestamp {
-  font-size: 0.75em;
-  line-height: 10px;
-}
-
-div.icons {
-  padding-right: 0.5em;
-  color: #4056A1;
+.tweet {
+  width:95%;
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  flex-direction: column;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 10px;
+  border-color: darkslategrey;
+  padding: 0.5em;
+  margin-bottom: 20px;
+}
+
+.tweet:hover {
+  box-shadow: 7px 7px rgb(180, 180, 180);
+}
+
+.tweet small {
+  color:grey;
+}
+
+.tweet header,footer {
+  width: 100%;
+  display: flex;
   justify-content: space-between;
 }
 
-i.flag {
-  opacity: 0.5;
-  padding-right: 0.5em;
-  color: lightgrey;
+.tweet footer {
+  font-size: 0.7em;
+}
+.tweet p {
+  width:100%;
+  display: flex;
+  margin: 15px;
+  border-style: none none solid none;
+  border-width: 4px;
+  padding: 0.5em;
+  font-family: "Source Sans Pro", "sans-serif";
+  font-weight: 600;
 }
 
-i.retweet {
-  opacity: 0.5;
-  padding-right: 0.5em;
-  color: lightgrey;
+.action {
+  color:blue;
 }
 
-i.heart {
-  opacity: 0.5; 
-  padding-right: 0.5em;
-  color: lightgrey;
-}
-
-i.flag:hover {
-  opacity: 1;
-  color:  #4056A5;
-}
-
-i.retweet:hover {
-  opacity: 1;
-  color:  #4056A5;
-}
-
-i.heart:hover {
-  opacity: 1;
-  color:  #4056A5;
+.action i:hover {
+  color: orange;
 }

@@ -1,82 +1,79 @@
 .new-tweet {
-  margin: 30px;
-  padding: 13.5px;
-  border-radius: 7px;
-  display: none;
-  justify-content: space-between;
+  width:100%;
+  display: flex;
+  align-items:center;
   flex-direction: column;
+  background-color:blanchedalmond;
+  margin:10px;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
-
-.new-tweet-footer {
-  display:flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-.new-tweet h2 {
-  margin: 0 0 15px 0;
-  font-family: 'Bungee', cursive;
-  font-size: 30px;
-  border-bottom-style: solid;
-  border-width: 1px;
-}
-
-.new-tweet textarea {
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  border-bottom: 8px solid grey; 
-  font-size: 18px;
+.container {
+  display: flex;
   width: 100%;
-  background: transparent;
-  font-weight: normal;
-  resize: none;
-  line-height: 40px;
-  outline: none;
+  background-color:blanchedalmond;
 }
 
-::placeholder { 
-  font-weight:bold;
+form {
+  width: 95%;
+  margin: auto;
+}
+
+textarea {
+  width: 100%;
+  margin-bottom: 0.5em;
+  background-color:blanchedalmond;
+  border-style: none none solid none;
+  border-width: 4px;
+  border-radius: 5px;
+  border-color: darkslategrey;
+  outline: none;
+  font-family: 'Source Sans Pro', 'sans-serif';
+  font-weight: 600;
+  color: #545149;
 }
 
 .counter {
-  font-family: 'Bungee', cursive;
-  font-size: 18px;
-  align-self: flex-end;
+  display: flex;
 }
 
-.tweet-button{
-  background-color:#4056A1;
-  font-family: 'Bungee', cursive;
-  font-size: 24px;
-  color:white;
+button {
+  font-family: "Bungee", "sans-serif";
+  background-color: #4056A1;
+  color: #FFFFFF;
 }
 
-.tweet-footer {
+label {
+  font-family: 'Source Sans Pro', 'sans-serif';
+  font-weight: bold;
+}
+
+#submit {
+  width: 100%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
-  width: 100%;
 }
 
-
-#alert {
-  display: flex;
-  margin: auto;
-  border: 8px solid red;
-  width: 100%;
-  padding: 5px;
-  display: none;
+.counter {
+  font-family: 'Bungee', 'sans-serif';
+  font-weight: bold;
 }
 
-.alert p {
-  text-align: center;
-  margin: auto;
-  color: red;
-  width: 80%;
+.long {
+  color:red;
 }
 
-.alert-pic {
-  color: red;
-  height: 25px;
-  width: 25px;
+#error {
+  display:none;
+  color:red;
+  border-color: red;
+  border-style: dashed;
+  border-width: 5px;
+  font-family: 'Source Sans Pro', 'sans-serif';
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.5em;
+  margin: 0.5em;
+  font-size: 150%;
 }
