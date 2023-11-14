@@ -1,52 +1,52 @@
- html {
+html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
+/*
+ * Global layout stuff
+ */
+
 body {
-  margin: 0;
-  color: black;
-  background-color: beige;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  color: #545149;
+  background-color: #f4f1ec;
   font-size: 24px;
+}
+
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+body {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+nav {
+  font-family: 'Bungee', 'sans-serif';
+
+}
+
 main {
-  margin: 0 auto;
-  background-color: transparent;
-  top: 80px;
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #545149;
+  margin:auto;
 }
 
-
-@media (max-width: 768px) {
-  nav.navigation {
-    background-color: #a4c5ea;
-  }
-}
-
-@media (min-width: 768px) {
-
-
+@media (min-width:1024px) {
   body {
+    flex-direction: row;
     display: flex;
-    justify-items: space-between;
+    padding-top: 100px;
+    align-items: stretch;
+    background-color: blanchedalmond;
   }
 
-  header.user {
-    height: 100%;
-    flex-basis: 60%;
-    position: relative;
-    margin: auto;
-  }
-
-  .container {
-    margin: 120px 40px auto 60px;
-    max-width: 1200px;
-    justify-content: flex-end;
+  main {
+    margin: auto 2vw auto 2vw;
   }
 }
-
