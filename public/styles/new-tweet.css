@@ -1,54 +1,82 @@
 .new-tweet {
-  border: 1px solid #ccc;
-  padding: 10px;
-  background-color: #fff;
-  margin: 10px 0;
-}
-
-.new-tweet form {
-  display: flex;
+  margin: 30px;
+  padding: 13.5px;
+  border-radius: 7px;
+  display: none;
+  justify-content: space-between;
   flex-direction: column;
 }
 
-.new-tweet label {
-  font-weight: bold;
-  margin-bottom: 5px;
+.new-tweet-footer {
+  display:flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.new-tweet h2 {
+  margin: 0 0 15px 0;
+  font-family: 'Bungee', cursive;
+  font-size: 30px;
+  border-bottom-style: solid;
+  border-width: 1px;
 }
 
 .new-tweet textarea {
-  height: 100px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 8px solid grey; 
+  font-size: 18px;
+  width: 100%;
+  background: transparent;
+  font-weight: normal;
   resize: none;
-  margin-bottom: 10px;
+  line-height: 40px;
+  outline: none;
 }
 
-.new-tweet button {
-  background-color: #4BB543;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
+::placeholder { 
+  font-weight:bold;
 }
 
-.new-tweet button:hover {
-  background-color: #349933;
+.counter {
+  font-family: 'Bungee', cursive;
+  font-size: 18px;
+  align-self: flex-end;
 }
 
-.new-tweet .counter {
-  text-align: right;
-  font-size: 12px;
-  color: #999;
+.tweet-button{
+  background-color:#4056A1;
+  font-family: 'Bungee', cursive;
+  font-size: 24px;
+  color:white;
 }
 
-$(".new-tweet form textarea").on("input", function() {
-  // Your code to update the character count goes here
-});
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
 
-$(".new-tweet form textarea").on("input", function() {
-  const $textarea = $(this);
-  const textLength = $textarea.val().length;
-  const remainingCharacters = 140 - textLength;
-  // Update the counter, e.g., $('.counter').text(remainingCharacters);
-  // Check if the remainingCharacters are negative and apply a CSS class for red if needed
-});
+#alert {
+  display: flex;
+  margin: auto;
+  border: 8px solid red;
+  width: 100%;
+  padding: 5px;
+  display: none;
+}
 
+.alert p {
+  text-align: center;
+  margin: auto;
+  color: red;
+  width: 80%;
+}
+
+.alert-pic {
+  color: red;
+  height: 25px;
+  width: 25px;
+}
