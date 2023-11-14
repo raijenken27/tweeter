@@ -1,88 +1,52 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
-html {
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
 body {
-  color: #545149;
-  background-color: #f4f1ec;
-  font-size: 24px;
-}
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
-
-/* Style the nav element */
-nav {
-  height: 120px;
-  width: 100%;
-  background-color: #4056A1;
-  color: #FFFFFF;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1.5em; /* 1.5ems of space on the right and left */
-}
-
-/* Style the span inside nav (for Bungee font) */
-nav span {
-  font-family: 'Bungee', sans-serif;
-  font-size: 1.5em;
-}
-
-/* Style the "Write a new tweet" text */
-.nav-text {
   margin: 0;
-}
-
-/* Style the angle-double-down icon */
-.nav-icon {
+  color: black;
+  background-color: beige;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   font-size: 24px;
-}
-
-/* Style the header element */
-header {
-  height: 400px;
-  width: 100%;
-  background-color: #EFEFEF; /* Change to the background color you prefer */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Style the avatar image */
-header img {
-  max-width: 200px; /* Adjust the size as needed */
-  height: auto;
-}
-
-/* Style the name text */
-header h2 {
-  font-size: 24px;
-  margin: 16px 0; /* Adjust the margin as needed */
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 main {
+  margin: 0 auto;
+  background-color: transparent;
+  top: 80px;
   width: 90%;
-  margin: 0 auto; /* Center align the main element */
-  background-color: #EFEFEF; /* Change to match the background color of the body */
-  padding: 20px; /* Add padding for spacing content from the edges */
 }
 
-.red-text {
-  color: red;
+
+@media (max-width: 768px) {
+  nav.navigation {
+    background-color: #a4c5ea;
+  }
 }
+
+@media (min-width: 768px) {
+
+
+  body {
+    display: flex;
+    justify-items: space-between;
+  }
+
+  header.user {
+    height: 100%;
+    flex-basis: 60%;
+    position: relative;
+    margin: auto;
+  }
+
+  .container {
+    margin: 120px 40px auto 60px;
+    max-width: 1200px;
+    justify-content: flex-end;
+  }
+}
+
