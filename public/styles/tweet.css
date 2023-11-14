@@ -1,0 +1,111 @@
+.tweets{
+  display: flex; 
+  flex-direction: column-reverse;
+  align-content: space-between;
+}
+
+article.tweet {
+  padding-left: 0.5em;
+  border: 5px solid grey;
+  opacity: 0.75;
+  margin: 30px;
+  padding: 13.5px;
+  min-height: 200px;
+}
+
+article.tweet:hover {
+  opacity: 1;
+  box-shadow: 10px 10px lightblue;
+}
+
+article.tweet:hover > header span.username {
+  display: inline;
+}
+
+article header {
+  padding-left: 10px;
+  display: flex;
+  width: 100%;
+}
+
+article header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+header img.profile-picture {
+  height: 50px;
+  width: 50px;
+}
+
+header span.name {
+  line-height: 50px;
+  margin-left: 10px;
+}
+
+header span.username {
+  color: lightgrey;
+  margin-left: auto;
+  line-height: 50px;
+  display: none;
+}
+
+div.body {
+  padding-left: 0.5em;
+}
+
+article footer {
+  padding-left: 0.5em;
+  color: grey;
+  border-top: 5px solid grey;  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer p.timestamp {
+  font-size: 0.75em;
+  line-height: 10px;
+}
+
+div.icons {
+  padding-right: 0.5em;
+  color: #4056A1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+i.flag {
+  opacity: 0.5;
+  padding-right: 0.5em;
+  color: lightgrey;
+}
+
+i.retweet {
+  opacity: 0.5;
+  padding-right: 0.5em;
+  color: lightgrey;
+}
+
+i.heart {
+  opacity: 0.5; 
+  padding-right: 0.5em;
+  color: lightgrey;
+}
+
+i.flag:hover {
+  opacity: 1;
+  color:  #4056A5;
+}
+
+i.retweet:hover {
+  opacity: 1;
+  color:  #4056A5;
+}
+
+i.heart:hover {
+  opacity: 1;
+  color:  #4056A5;
+}
