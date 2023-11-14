@@ -3,90 +3,102 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const MAX_CHARS = 140;
+$(document).ready(() => {
 
-//function to prevent XSS
-const escape = function(str) {
-  let div = document.createElement("div");
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
-
-//generate html using user data
-const createTweetElement = function(userData) {
-  const $tweet = $(`
-  <article>
-    <header>
-      <div class="profile-header">
-        <img src="${escape(userData.user.avatars)}">
-        <span>${escape(userData.user.name)}</span>
-      </div>
-      <span><strong>${escape(userData.user.handle)}</strong></span>
-    </header>
-    <p><strong>${escape(userData.content.text)}</strong></p>
-    <footer>
-      <p><strong>${timeago.format(escape(userData.created_at))}</strong></p>
-      <div class="icon-group">
-        <i class="fa-solid fa-flag"></i>
-        <i class="fa-solid fa-retweet"></i>
-        <i class="fa-solid fa-heart"></i>
-      </div>
-    </footer>
-  </article>`);
-
-  return $tweet;
-};
-
-//render tweets in index.html
-const renderTweets = function(data) {
-  //empty container to prevent duplicates on render
-  $('#tweets-container').empty();
-
-  for (const user of data) {
-    $('#tweets-container').prepend(createTweetElement(user));
-  }
-};
-
-$(document).ready(function() {
-  //render html using .json file
-  const loadTweets = function() {
-    $.get('/tweets', (data) => {
-      renderTweets(data);
+  // Function to render tweets on the page
+  const renderTweets = function(tweets) {
+    // Clear the tweets container to refresh it
+    $(".tweets-container").empty();
+    // Loop through tweets and append each one to the container
+    tweets.forEach(tweet => {
+      const tweetElement = createTweetElement(tweet);
+      $(".tweets-container").prepend(tweetElement);
     });
   };
 
-  //execute post when button is pressed
-  $('form').submit(function(event) {
-    event.preventDefault();
+  // Function to create an HTML element for a given tweet object
+  const createTweetElement = function(tweet) {
+    // Escape function to prevent XSS attacks via tweet.content.text
+    const escape = function(str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
 
-    const textInput = $('#tweet-text').val().trim();
+    // Construct the tweet HTML element
+    let $tweet = $(`
+      <article class="tweet">
+        <header>
+          <span>
+            <img src=${tweet.user.avatars}>
+            &nbsp${tweet.user.name}
+          </span>
+          <small>
+            ${tweet.user.handle}
+          </small>
+        </header>
+        <p>
+          ${escape(tweet.content.text)}
+        </p>
+        <footer>
+          <div>
+            ${timeago.format(tweet.created_at)}
+          </div>
+          <div class="action">
+            <i class="fa-solid fa-flag"></i> &nbsp; 
+            <i class="fa-solid fa-retweet"></i> &nbsp;
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
+    `);
+    return $tweet;
+  };
 
-    //send alert if input text is empty
-    if (!textInput) {
-      setTimeout(() => { //hide error after 2 seconds
-        $('#empty-string').slideUp();
-      }, 2000);
+  // Function to load tweets from the server (/tweets/) and render them
+  const loadTweets = function() {
+    $.ajax('/tweets/', { method: 'GET' })
+      .done(function(data) {
+        renderTweets(data);
+      });
+  };
 
-      return $('#empty-string').slideDown();
-    }
+  // Form submission handler
+  $(function() {
+    const $form = $('.new-tweet form');
+    $form.on('submit', function(event) {
+      event.preventDefault();
+      const queryString = $(this).serialize();
+      const charCounter = $(".counter");
+      const tweetLength = $(charCounter).html();
 
-    //send alert if text input exceeds limit
-    if (textInput.length > MAX_CHARS) {
-      setTimeout(() => { //hide error after 2 seconds
-        $('#max-limit').slideUp();
-      }, 2000);
+      // Check for invalid tweet length
+      if (tweetLength >= 140) {
+        $("#error").slideUp(() => {
+          $("#error").html("\⚠️ Cannot post an empty tweet! \⚠️").slideDown();
+        });
+        return;
+      }
+      if (tweetLength < 0) {
+        $("#error").slideUp(() => {
+          $("#error").html("\⚠️ Maximum tweet length exceeded! \⚠️").slideDown();
+        });
+        return;
+      }
 
-      return $('#max-limit').slideDown();
-    }
-
-    //send input data to .json file
-    $.post('/tweets', $('#tweet-text').serialize(), () => {
-      //clear form after posting
-      $('form').trigger('reset');
-
-      loadTweets();
+      // Send tweet to the server
+      $.ajax('/tweets/', { method: 'POST', data: queryString })
+        .done(() => {
+          // After posting to the server: reload tweets, clear form, reset counter, and hide error
+          loadTweets();
+          $("textarea").val("");
+          $(".counter").html('140');
+          $("#error").slideUp();
+        });
     });
   });
 
+  // Initial load of tweets
   loadTweets();
+
 });
