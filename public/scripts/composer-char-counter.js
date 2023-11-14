@@ -1,17 +1,15 @@
 $(document).ready(function() {
-  $(".new-tweet form textarea").on("input", function() {
-    const $textarea = $(this);
-    const textLength = $textarea.val().length;
-    const remainingCharacters = 140 - textLength;
-    const $counter = $textarea.closest(".new-tweet").find(".counter");
+  //use input event handler
+  $('#tweet-text').on('input', function() {
+    const charLimit = 140;
+    const characters = $(this).val().length;
+    $(this).siblings('div').children('#counter').val(charLimit - characters);
 
-    // Update the counter text
-    $counter.text(remainingCharacters);
-    
-    if (remainingCharacters < 0) {
-      $counter.addClass("red-text");
+  
+    if (characters > charLimit) {
+      $('#counter').addClass('negative');
     } else {
-      $counter.removeClass("red-text");
+      $('#counter').removeClass('negative');
     }
   });
 });
