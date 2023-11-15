@@ -5,13 +5,10 @@ Tweeter is a simple, single-page Twitter clone.
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express back-end skills.
 
 ## Screenshots
-<img width="1441" alt="Screenshot 2023-11-14 at 11 08 23 AM" src="https://github.com/raijenken27/tweeter/assets/29512917/342eaa19-edf7-4b66-9486-2d5654f2700f">
-<img width="1424" alt="Screenshot 2023-11-14 at 11 08 44 AM" src="https://github.com/raijenken27/tweeter/assets/29512917/d59eaee7-9cfb-43de-9f45-326375f25355">
-
-# Mobile
-<img width="783" alt="Screenshot 2023-11-14 at 11 09 10 AM" src="https://github.com/raijenken27/tweeter/assets/29512917/330d24e5-16c3-4a2a-b1a7-beaff9254e1d">
-<img width="787" alt="Screenshot 2023-11-14 at 11 09 36 AM" src="https://github.com/raijenken27/tweeter/assets/29512917/fb19c31d-a7ad-4b6b-8e3c-da605d40b958">
-
+<img width="1579" alt="Screenshot 2023-11-14 at 5 58 08 PM" src="https://github.com/raijenken27/tweeter/assets/29512917/d7175463-9a6a-42b6-9e7f-b55b60cf3bbb">
+<img width="1574" alt="Screenshot 2023-11-14 at 5 58 21 PM" src="https://github.com/raijenken27/tweeter/assets/29512917/f20f4b26-15a0-4545-9065-e0b521a570a6">
+<img width="537" alt="Screenshot 2023-11-14 at 5 59 03 PM" src="https://github.com/raijenken27/tweeter/assets/29512917/d1c18893-d665-40b7-a60a-9b1e2aa24aa0">
+<img width="1526" alt="Screenshot 2023-11-14 at 5 59 36 PM" src="https://github.com/raijenken27/tweeter/assets/29512917/adb4bcb2-e66c-4ed6-876d-0423ac8fdf7d">
 
 
 
