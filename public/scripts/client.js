@@ -21,8 +21,8 @@ $(document).ready(function () {
 
   /**
    * createTweetElement function definition
-   * @param {Object} tweetObj 
-   * @returns 
+   * @param {Object} tweetObj
+   * @returns
    */
   const createTweetElement = function (tweetObj) {
     const $tweet = $(`
