@@ -28,24 +28,20 @@ $(document).ready(function () {
     const $tweet = $(`
   <article class="tweet">
           <header>
-            <ul>
               <div class="user-info">
-                <li class="user-picture"><img src="${tweetObj.user.avatars}" alt="beautiful face avatar" /></li>
-                <li class="user-name">${tweetObj.user.name}</li>
+                <img class="user-picture" src="${tweetObj.user.avatars}" alt="beautiful face avatar" />
+                <span class="user-name">${tweetObj.user.name}</span>
               </div>
-              <li class="tweeter-handle">${tweetObj.user.handle}</li>
-            </ul>
+              <span class="tweeter-handle">${tweetObj.user.handle}</span>
           </header>
-          <textarea name="text" readonly id="tweet-text">${safeHTML(tweetObj.content.text)}</textarea>
+          <p id="tweet-text">${safeHTML(tweetObj.content.text)}</p>
           <footer>
-            <ul>
-              <li>${timeago.format(tweetObj.created_at)}</li>
+              <span>${timeago.format(tweetObj.created_at)}</span>
               <div class="icons">
-                <li><i class="fa-solid fa-flag"></i></li>
-                <li><i class="fa-solid fa-retweet"></i></li>
-                <li><i class="fa-sharp fa-solid fa-heart"></i></li>
+                <i class="fa-solid fa-flag"></i>
+                <i class="fa-solid fa-retweet"></i>
+                <i class="fa-sharp fa-solid fa-heart"></i>
               </div>
-            </ul>
           </footer>
   </article>
   `);
@@ -53,7 +49,7 @@ $(document).ready(function () {
   }
   /**
    * renderTweets function definition
-   * @param {Array} tweets 
+   * @param {Array} tweets
    */
   const renderTweets = function (tweets) {
     // loops through tweets

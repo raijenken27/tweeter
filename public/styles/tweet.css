@@ -14,15 +14,11 @@
   padding-right: 1em;
 }
 
-ul {
-  list-style-type: none;
-}
-
-.tweet footer ul {
+.tweet footer {
   padding-inline-start: 25px;
 }
 
-.tweet header ul {
+.tweet header {
   display: flex;
   justify-content: space-between;
   margin: 0;
@@ -36,7 +32,7 @@ ul {
   justify-content: space-between;
 }
 
-.user-info > li {
+.user-info > span {
   font-weight: 400;
 }
 
@@ -57,7 +53,7 @@ ul {
   color: rgba(64, 86, 161, 0.5);
 }
 
-.tweet textarea {
+.tweet p {
   width: 99%;
   margin-left: 20px;
   border-width: 0px 0px 3px 0px;
@@ -68,7 +64,7 @@ ul {
   color: #545149;
 }
 
-.tweet footer ul {
+.tweet footer {
   display: flex;
   justify-content: space-between;
   font-size: 0.75em;
@@ -83,7 +79,7 @@ ul {
   cursor: pointer;
 }
 
-.icons li {
+.icons {
   padding: 0px 5px;
   color: #4056a1;
 }
